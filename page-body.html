@@ -1,0 +1,264 @@
+
+<div class="pg">
+
+  <header class="mast">
+    <div class="mast__kicker">
+      <span class="p5-knockout">Design System</span>
+      <span class="p5-eyebrow">Derived from Persona 5 &middot; v1.0</span>
+    </div>
+    <h1 class="mast__title">Persona<em>Five</em></h1>
+    <p class="mast__sub">The loudest UI language a mainstream game has shipped: vermilion on soot, torn-paper edges, and type that leans eight degrees into the wind. This pack turns it into tokens and components you can build a product on.</p>
+    <span class="p5-scrawl mast__scrawl">take it.</span>
+  </header>
+
+  <div class="p5-marquee-clip" aria-hidden="true">
+    <div class="p5-marquee">
+      <div class="p5-marquee__track">
+        <span>SKEW 8&deg; &middot; ZERO RADIUS &middot; HARD SHADOW &middot; TORN EDGE &middot; HALFTONE &middot; ONE RED &middot;</span>
+        <span>SKEW 8&deg; &middot; ZERO RADIUS &middot; HARD SHADOW &middot; TORN EDGE &middot; HALFTONE &middot; ONE RED &middot;</span>
+      </div>
+    </div>
+  </div>
+
+  <nav aria-label="Contents">
+    <p class="p5-eyebrow" style="margin-top:var(--p5-6)">Contents</p>
+    <ul class="toc">
+      <li><a href="#s1"><span class="n">01</span><span>The Vibe</span></a></li>
+      <li><a href="#s2"><span class="n">02</span><span>Best For / Avoid If</span></a></li>
+      <li><a href="#s3"><span class="n">03</span><span>Design Philosophy</span></a></li>
+      <li><a href="#s4"><span class="n">04</span><span>The Kit</span></a></li>
+      <li><a href="#s5"><span class="n">05</span><span>Use With Claude</span></a></li>
+      <li><a href="#s6"><span class="n">06</span><span>Watch Out For</span></a></li>
+      <li><a href="#s7"><span class="n">07</span><span>Pairs Well With</span></a></li>
+      <li><a href="#s8"><span class="n">08</span><span>Download</span></a></li>
+    </ul>
+  </nav>
+
+  <section id="s1">
+    <div class="sh"><span class="sh__n">01</span><h2 class="sh__t">The Vibe</h2><span class="sh__line"></span></div>
+    <p class="p5-lead">Vermilion red on warm black, every surface cut like torn paper, every headline shoved eight degrees off the vertical, and drop shadows with zero blur, the way ink sits on a poster. Most interfaces go soft: pale grounds, rounded cards, a friendly sans. This one goes the other way. It behaves like a title sequence that happens to be clickable.</p>
+    <p>Restraint is what makes the one weapon land. The ground stays nearly monochrome, so a single vermilion shard reads as an event. Cyan appears when something is confirmed. Amber when something is pending. Nothing else gets a colour.</p>
+    <div class="spec" style="margin-top:var(--p5-5)">
+      <span class="spec__cap">Looks like</span>
+      <div class="looks">
+        <span class="p5-tag"><span>Persona 5 battle menus</span></span>
+        <span class="p5-tag"><span>Jet Set Radio</span></span>
+        <span class="p5-tag"><span>No More Heroes</span></span>
+        <span class="p5-tag"><span>Shibuya street-poster paste-up</span></span>
+        <span class="p5-tag"><span>Saul Bass title cards</span></span>
+        <span class="p5-tag"><span>Riso-printed zine covers</span></span>
+        <span class="p5-tag"><span>Manga speed-line panels</span></span>
+        <span class="p5-tag"><span>A heist film's opening credits</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="s2">
+    <div class="sh"><span class="sh__n">02</span><h2 class="sh__t">Best For / Avoid If</h2><span class="sh__line"></span></div>
+    <div class="grid-2">
+      <div class="fa fa--yes">
+        <h3>&#43;&nbsp;Best For</h3>
+        <ul>
+          <li>Products built around one hero action: capture, scan, start, submit</li>
+          <li>Audiences who already love game UI and want software that feels like it</li>
+          <li>Timers, streaks, levels, anything with progress worth dramatising</li>
+          <li>Short bursts of use rather than all-day sessions</li>
+          <li>Brands with the nerve to be loud and specific</li>
+          <li>Marketing surfaces that need to stop a scroll cold</li>
+        </ul>
+      </div>
+      <div class="fa fa--no">
+        <h3>&#215;&nbsp;Avoid If</h3>
+        <ul>
+          <li>Your screens are dense tables or long-form reading. Skewed type and clipped shards fight information density</li>
+          <li>You need to read as trustworthy and institutional; this trades credibility for swagger, on purpose</li>
+          <li>Your audience needs a light theme. This world is dark only, and inverting it collapses it</li>
+          <li>Accessibility budget is thin: it leans on custom focus rings, and every shard needs contrast checked by hand</li>
+          <li>The product is calm by nature: sleep, meditation, anything anxiety-adjacent</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="s3">
+    <div class="sh"><span class="sh__n">03</span><h2 class="sh__t">Design Philosophy</h2><span class="sh__line"></span></div>
+    <p class="p5-muted" style="font-size:var(--p5-t-sm)">Ordered by how load-bearing each rule is. Break 01 and the aesthetic is gone; break 04 and it just gets noisy.</p>
+    <div class="phi">
+      <div class="phi__item"><span class="phi__n">01</span><div>
+        <h3>Nothing is a rectangle, nothing is rounded</h3>
+        <p>Every surface is cut with a <code>clip-path</code> into a torn-paper shard, and <code>border-radius</code> is zero on every element. This single rule does more work than the colour does. A rounded corner anywhere reads as a different product entirely.</p>
+      </div></div>
+      <div class="phi__item"><span class="phi__n">02</span><div>
+        <h3>Eight degrees, always the same eight</h3>
+        <p>Display type, buttons, tags, nav items and gauge tracks all skew <code>-8deg</code>; inner text un-skews by the same amount so it stays readable. Panels rotate a further <code>-1.5deg</code>. Repeating one angle reads as attitude. Random angles just read as broken.</p>
+      </div></div>
+      <div class="phi__item"><span class="phi__n">03</span><div>
+        <h3>Red is a weapon, not a background</h3>
+        <p>Vermilion marks exactly one thing per view: the action you're meant to take, or the step you're on. Keep it under roughly 15% of any screen. The moment red becomes a surface colour it stops signalling anything.</p>
+      </div></div>
+      <div class="phi__item"><span class="phi__n">04</span><div>
+        <h3>One orchestrated moment, everything else micro</h3>
+        <p>Motion is fast in and slower out: 120ms snap with a touch of overshoot, 420ms to settle. Each screen gets a single choreographed beat and nothing else animates for its own sake. Anything beyond that beat competes with it.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="s4">
+    <div class="sh"><span class="sh__n">04</span><h2 class="sh__t">The Kit</h2><span class="sh__line"></span></div>
+
+    <p class="p5-eyebrow">Palette: twelve values, closed set</p>
+    <div class="grid-3" style="margin-top:var(--p5-4)">
+      <div class="sw"><div class="sw__chip" style="background:var(--p5-red)"></div><div class="sw__meta"><span class="sw__name">Phantom Red</span><span class="sw__hex">#E60012</span></div><span class="sw__use">Fills, borders, the one accent.</span></div>
+      <div class="sw"><div class="sw__chip" style="background:var(--p5-red-text)"></div><div class="sw__meta"><span class="sw__name">Red Text</span><span class="sw__hex">#FF4436</span></div><span class="sw__use">Small red type on dark. 5.3:1.</span></div>
+      <div class="sw"><div class="sw__chip" style="background:var(--p5-red-deep)"></div><div class="sw__meta"><span class="sw__name">Deep Red</span><span class="sw__hex">#8E0009</span></div><span class="sw__use">Hard offset shadows only.</span></div>
+      <div class="sw"><div class="sw__chip" style="background:var(--p5-black)"></div><div class="sw__meta"><span class="sw__name">Soot Black</span><span class="sw__hex">#0B0709</span></div><span class="sw__use">Page ground. Warm, never pure black.</span></div>
+      <div class="sw"><div class="sw__chip" style="background:var(--p5-soot)"></div><div class="sw__meta"><span class="sw__name">Ember</span><span class="sw__hex">#241A1E</span></div><span class="sw__use">Raised surfaces and cards.</span></div>
+      <div class="sw"><div class="sw__chip" style="background:var(--p5-bone)"></div><div class="sw__meta"><span class="sw__name">Bone</span><span class="sw__hex">#F4EFEA</span></div><span class="sw__use">Body text and paper shards.</span></div>
+      <div class="sw"><div class="sw__chip" style="background:var(--p5-smoke)"></div><div class="sw__meta"><span class="sw__name">Smoke</span><span class="sw__hex">#A99CA1</span></div><span class="sw__use">Metadata and muted labels. 7.0:1.</span></div>
+      <div class="sw"><div class="sw__chip" style="background:var(--p5-go)"></div><div class="sw__meta"><span class="sw__name">Go Cyan</span><span class="sw__hex">#17E0D6</span></div><span class="sw__use">Confirmed, complete. Also the focus ring.</span></div>
+      <div class="sw"><div class="sw__chip" style="background:var(--p5-hold)"></div><div class="sw__meta"><span class="sw__name">Hold Amber</span><span class="sw__hex">#FFC400</span></div><span class="sw__use">Pending, caution.</span></div>
+      <div class="sw"><div class="sw__chip" style="background:var(--p5-burn)"></div><div class="sw__meta"><span class="sw__name">Burn</span><span class="sw__hex">#FF7A00</span></div><span class="sw__use">Failed, expired, destructive.</span></div>
+    </div>
+
+    <p class="p5-eyebrow" style="margin-top:var(--p5-7)">Type: three faces, three jobs</p>
+    <div class="spec" style="margin-top:var(--p5-4)">
+      <div class="type-row"><span class="lbl">Anton / display</span><span class="p5-display" style="font-size:var(--p5-t-xl);color:var(--p5-bone)">All-Out Attack</span></div>
+      <div class="type-row"><span class="lbl">Archivo 700 / label</span><span style="font-weight:700;letter-spacing:var(--p5-track-cap);text-transform:uppercase;font-size:var(--p5-t-sm)">Rank 3 &middot; 12 of 40 &middot; 08:24</span></div>
+      <div class="type-row"><span class="lbl">Archivo 400 / body</span><span style="font-size:var(--p5-t-base);color:var(--p5-bone)">Body copy sits on the flat, never skewed, at 15px on a 1.55 line.</span></div>
+      <div class="type-row"><span class="lbl">Rock Salt / scrawl</span><span class="p5-scrawl" style="color:var(--p5-red-text)">not yet!</span></div>
+    </div>
+
+    <p class="p5-eyebrow" style="margin-top:var(--p5-7)">Components</p>
+    <div class="spec" style="margin-top:var(--p5-4);gap:var(--p5-5)">
+      <div class="p5-row" style="gap:var(--p5-5);align-items:center">
+        <button class="p5-attack" type="button"><span>Go</span></button>
+        <div class="p5-stack" style="flex:1;min-width:260px">
+          <div class="p5-row">
+            <button class="p5-btn p5-btn--primary" type="button"><span>Confirm</span></button>
+            <button class="p5-btn" type="button"><span>Save</span></button>
+            <button class="p5-btn p5-btn--ghost" type="button"><span>Skip</span></button>
+            <button class="p5-btn p5-btn--danger" type="button"><span>Delete</span></button>
+            <button class="p5-btn" type="button" disabled><span>Locked</span></button>
+          </div>
+          <div class="p5-row">
+            <button class="p5-chip" type="button" aria-pressed="true"><span>Active</span> <span class="p5-chip__count">12</span></button>
+            <button class="p5-chip" type="button" aria-pressed="true"><span>Assigned</span> <span class="p5-chip__count">4</span></button>
+            <button class="p5-chip" type="button" aria-pressed="false"><span>Archived</span> <span class="p5-chip__count">38</span></button>
+            <button class="p5-chip" type="button" aria-pressed="false"><span>Draft</span> <span class="p5-chip__count">2</span></button>
+          </div>
+          <div class="p5-row" style="gap:6px">
+            <span class="p5-tag p5-tag--go"><span>Confirmed</span></span>
+            <span class="p5-tag p5-tag--hold"><span>Pending</span></span>
+            <span class="p5-tag p5-tag--alert"><span>Overdue</span></span>
+            <span class="p5-tag p5-tag--solid"><span>New</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p5-banner">
+        <span class="p5-banner__shout">Hold up!</span>
+        <span class="p5-banner__body">You have 3 unsaved changes. Leaving now discards them.</span>
+      </div>
+
+      <div class="grid-2">
+        <div class="p5-stack">
+          <div class="p5-step" data-state="done"><span class="p5-step__no">01</span><div class="p5-step__body"><strong>Connect the source</strong><span class="p5-muted" style="font-size:var(--p5-t-sm)">Authenticated 4 minutes ago.</span></div></div>
+          <div class="p5-step" data-state="active"><span class="p5-step__no">02</span><div class="p5-step__body"><strong>Import records</strong><span class="p5-muted" style="font-size:var(--p5-t-sm)">Reading 1,204 rows.</span>
+            <div class="p5-gauge" style="margin-top:6px"><div class="p5-gauge__head"><span>Progress</span><span class="p5-gauge__val">62%</span></div><div class="p5-gauge__track"><div class="p5-gauge__fill" style="width:62%"></div></div></div>
+          </div></div>
+          <div class="p5-step"><span class="p5-step__no">03</span><div class="p5-step__body"><strong>Review and publish</strong><span class="p5-muted" style="font-size:var(--p5-t-sm)">Unlocks when the import finishes.</span></div></div>
+        </div>
+
+        <div class="p5-stack">
+          <div class="p5-card">
+            <div class="p5-card__media" style="background:linear-gradient(135deg,#3A0B10,#8E0009 60%,#E60012)">
+              <span class="p5-knockout" style="margin:var(--p5-3)">Updated 2m ago</span>
+            </div>
+            <h3 class="p5-card__title">Quarterly Review</h3>
+            <div class="p5-card__meta"><span>18 tasks</span><span>4 owners</span><span>Due Fri</span></div>
+            <div class="p5-row" style="gap:6px">
+              <span class="p5-tag p5-tag--go"><span>On track</span></span>
+              <span class="p5-tag p5-tag--hold"><span>2 blocked</span></span>
+            </div>
+          </div>
+          <div class="p5-gauge p5-gauge--hold"><div class="p5-gauge__head"><span>Storage</span><span class="p5-gauge__val">41.2 / 50 GB</span></div><div class="p5-gauge__track"><div class="p5-gauge__fill" style="width:82%"></div></div></div>
+          <div class="p5-field"><label class="p5-field__label" for="q">Search</label><div class="p5-input-shell"><input class="p5-input" id="q" type="text" placeholder="Type a name"></div></div>
+        </div>
+      </div>
+
+      <ul class="p5-jaw" style="max-width:320px">
+        <li class="p5-jaw__item" aria-current="page"><span>Overview</span></li>
+        <li class="p5-jaw__item"><span>Records</span></li>
+        <li class="p5-jaw__item"><span>Settings</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s5">
+    <div class="sh"><span class="sh__n">05</span><h2 class="sh__t">Use With Claude</h2><span class="sh__line"></span></div>
+    <div class="grid-2">
+      <div class="uw">
+        <h3>Claude</h3>
+        <ol>
+          <li>Open <em>Customize</em>, then <em>Skills</em></li>
+          <li>Create a skill and upload <code>SKILL.md</code></li>
+          <li>Add <code>DESIGN.md</code>, <code>tokens.css</code> and <code>components.css</code> to the project knowledge base</li>
+          <li>Name the system while you build. Claude applies it from there</li>
+        </ol>
+      </div>
+      <div class="uw">
+        <h3>Claude Code / Cursor</h3>
+        <ol>
+          <li>Drop the <code>design-system/</code> folder in your repo</li>
+          <li>Reference <code>SKILL.md</code> and <code>DESIGN.md</code> from <code>CLAUDE.md</code> (or <code>.cursor/rules</code>)</li>
+          <li>Import <code>tokens.css</code> then <code>components.css</code> in your global stylesheet</li>
+          <li>Build normally. Name the system to invoke it</li>
+        </ol>
+      </div>
+    </div>
+    <div class="tip">
+      <strong>&#9733; Pro tip</strong>
+      <p style="font-size:var(--p5-t-sm)">Ask for the shard geometry before the colour. If you let a model start from &ldquo;red and black,&rdquo; you get a red-and-black bootstrap page. If you make it start from <code>clip-path</code> silhouettes, zero radius and the &minus;8&deg; skew, the palette lands on top of a structure that's already correct.</p>
+    </div>
+  </section>
+
+  <section id="s6">
+    <div class="sh"><span class="sh__n">06</span><h2 class="sh__t">Watch Out For</h2><span class="sh__line"></span></div>
+    <div class="warn">
+      <div class="warn__item"><span class="warn__mark">!</span><div><h3>Skewed text that never un-skews</h3><p>Buttons and nav items skew the container, so the label inside has to skew back by <code>+8deg</code> or the type comes out warped. Every component does this with a <code>.p5-btn &gt; *</code> rule. Keep it when you build new ones.</p></div></div>
+      <div class="warn__item"><span class="warn__mark">!</span><div><h3>Halftone loud enough to eat the text</h3><p>The dot grid belongs under the copy at about <code>.16</code> alpha. Push it past roughly <code>.25</code> and body text stops being comfortable to read while still technically passing contrast.</p></div></div>
+      <div class="warn__item"><span class="warn__mark">!</span><div><h3>Pure #E60012 on small type</h3><p>The signature red is 3.4:1 on the ground, which fails for labels and captions. Fills and borders use <code>--p5-red</code>; anything set small uses <code>--p5-red-text</code> at 5.3:1.</p></div></div>
+      <div class="warn__item"><span class="warn__mark">!</span><div><h3>Soft shadows creeping back in</h3><p>A blurred shadow turns this into a generic dark dashboard. Shadows are hard offsets with zero blur in <code>#8E0009</code> or black. Any blur radius above 0 is wrong.</p></div></div>
+      <div class="warn__item"><span class="warn__mark">!</span><div><h3>Red as a surface</h3><p>The fastest way to kill this system is to make red the card background because it's the brand colour. Red marks one thing per screen. Everything else is soot, ember and bone.</p></div></div>
+      <div class="warn__item"><span class="warn__mark">!</span><div><h3>Rotated elements bleeding out of layout</h3><p>Anything with <code>rotate()</code> throws its corners past its own box. The marquee sits inside <code>.p5-marquee-clip</code> for exactly this reason. Wrap every tilted band the same way.</p></div></div>
+      <div class="warn__item"><span class="warn__mark">!</span><div><h3>Off-the-shelf icon sets</h3><p>Rounded Lucide or Heroicons fight every other line on the page. Icons here are angular, chisel-tipped, drawn on the same &minus;8&deg; grid, or they're type set in Anton instead.</p></div></div>
+      <div class="warn__item"><span class="warn__mark">!</span><div><h3>Invisible focus states</h3><p>Skewed clip-path elements clip a default browser outline into nothing. Every interactive element needs the explicit cyan <code>outline: 3px solid #17E0D6</code> with an offset. This is the accessibility cost of the aesthetic and it isn't optional.</p></div></div>
+    </div>
+  </section>
+
+  <section id="s7">
+    <div class="sh"><span class="sh__n">07</span><h2 class="sh__t">Pairs Well With</h2><span class="sh__line"></span></div>
+    <div class="grid-3">
+      <div class="pair"><h3>Type</h3><p>Anton with Archivo is the house pair. Swap Anton for League Gothic or Oswald if you need more weights; keep the condensed width and the skew.</p></div>
+      <div class="pair"><h3>Texture</h3><p>9px halftone dot grids and &minus;58&deg; slash hatching, both at very low opacity. Riso-style misregistration if you want print energy.</p></div>
+      <div class="pair"><h3>Imagery</h3><p>Hard flash, deep shadow, subjects cropped tight. Duotone the misses into red and black rather than dropping them.</p></div>
+      <div class="pair"><h3>Motion</h3><p>CSS transitions carry almost all of it. Reach for GSAP only for the hero moment, the one worth choreographing.</p></div>
+      <div class="pair"><h3>Sound</h3><p>Short percussive acid-jazz stabs on confirm. The aesthetic has an audio half and skipping it leaves the product quieter than it looks.</p></div>
+      <div class="pair"><h3>Adjacent looks</h3><p>Brutalist web, Y2K rave flyers, manga panelling, Swiss poster grids pushed off-axis.</p></div>
+    </div>
+  </section>
+
+  <section id="s8">
+    <div class="sh"><span class="sh__n">08</span><h2 class="sh__t">Download</h2><span class="sh__line"></span></div>
+    <p>Everything lives in <code>design-system/</code> in the repo.</p>
+    <div class="dl">
+      <div class="dl__row"><span class="dl__name">tokens.css</span><span class="dl__what">The twelve colours, type scale, the &minus;8&deg; angle, spacing, hard-offset elevation, motion curves and the four shard clip-paths.</span></div>
+      <div class="dl__row"><span class="dl__name">components.css</span><span class="dl__what">Buttons, the All-Out Attack trigger, chips, tags, gauges, the HOLD UP banner, jaw nav, card, step HUD, marquee, fields, plus the reduced-motion pass.</span></div>
+      <div class="dl__row"><span class="dl__name">DESIGN.md</span><span class="dl__what">The spec: palette table with usage and contrast, type rules, the five geometry laws, and the component index.</span></div>
+      <div class="dl__row"><span class="dl__name">SKILL.md</span><span class="dl__what">Agent-facing rules: non-negotiables, colour discipline, voice, accessibility. Point Claude or Cursor at this one.</span></div>
+      <div class="dl__row"><span class="dl__name">index.html</span><span class="dl__what">This page. Self-contained; it inlines both stylesheets, so it doubles as the living specimen.</span></div>
+    </div>
+    <p style="margin-top:var(--p5-6)"><span class="p5-scrawl" style="color:var(--p5-red-text);font-size:var(--p5-t-md)">now go take it.</span></p>
+  </section>
+
+</div>

@@ -1,0 +1,97 @@
+/* ============================================================
+   PERSONA 5 DESIGN SYSTEM
+   Design tokens. Visual language derived from Persona 5 (Atlus, 2016).
+   Single-theme by intent: a committed dark world, so every colour is
+   painted explicitly and nothing inherits a host ground.
+   ============================================================ */
+
+:root {
+  /* --- Ground & ink -------------------------------------------------
+     Neutrals are warm and red-biased, never a dead grey. */
+  --p5-black:      #0B0709;   /* page ground */
+  --p5-black-2:    #140E11;   /* recessed */
+  --p5-soot:       #241A1E;   /* raised surface */
+  --p5-ash:        #3B2C32;   /* hairlines, disabled fills */
+  --p5-smoke:      #A99CA1;   /* muted text, 7.0:1 on --p5-black */
+  --p5-bone:       #F4EFEA;   /* primary text, paper surfaces */
+  --p5-white:      #FFFFFF;   /* for the shouting only */
+
+  /* --- Signature ----------------------------------------------------
+     Two reds: one for fills, one for text. #E60012 on black is 3.4:1,
+     which fails for small type, so small red text uses --p5-red-text. */
+  --p5-red:        #E60012;   /* fills, borders, the one accent */
+  --p5-red-text:   #FF4436;   /* small red type on dark, 5.3:1 */
+  --p5-red-hot:    #FF2A1F;   /* hover / active fills */
+  --p5-red-deep:   #8E0009;   /* hard offset shadows */
+  --p5-red-ghost:  rgba(230, 0, 18, 0.14);
+
+  /* --- Semantic (state; NOT the accent) ------------------------------ */
+  --p5-go:         #17E0D6;   /* confirmed, complete, focus ring */
+  --p5-hold:       #FFC400;   /* pending, caution */
+  --p5-burn:       #FF7A00;   /* failed, expired, destructive */
+
+  /* --- Type ---------------------------------------------------------- */
+  --p5-font-display: "Anton", "Haettenschweiler", "Arial Narrow", sans-serif;
+  --p5-font-ui:      "Archivo", ui-sans-serif, "Helvetica Neue", Arial, sans-serif;
+  --p5-font-scrawl:  "Rock Salt", "Bradley Hand", cursive;
+
+  /* 1.26 scale */
+  --p5-t-xs:    0.75rem;    /* 12px: tags, unit labels */
+  --p5-t-sm:    0.8125rem;  /* 13px: captions, metadata */
+  --p5-t-base:  0.9375rem;  /* 15px: body */
+  --p5-t-md:    1.1875rem;  /* 19px: lead */
+  --p5-t-lg:    1.75rem;    /* 28px: card titles */
+  --p5-t-xl:    2.75rem;    /* 44px: section heads */
+  --p5-t-2xl:   4.25rem;    /* 68px: screen titles */
+  --p5-t-3xl:   7rem;       /* 112px: masthead */
+
+  --p5-lh-tight: 0.86;      /* display: lines must collide */
+  --p5-lh-body:  1.55;
+  --p5-track-cap: 0.1em;    /* uppercase labels */
+
+  /* --- Geometry ------------------------------------------------------
+     Nothing in this system is a rectangle and nothing is rounded. */
+  --p5-skew:        -8deg;   /* the house angle */
+  --p5-skew-soft:   -4deg;
+  --p5-tilt:        -1.5deg; /* whole-panel rotation */
+  --p5-radius:      0;       /* non-negotiable */
+  --p5-hairline:    2px;
+  --p5-rule:        4px;
+  --p5-slab:        8px;
+
+  /* --- Space (4px base) ----------------------------------------------- */
+  --p5-1: 4px;  --p5-2: 8px;  --p5-3: 12px; --p5-4: 16px;
+  --p5-5: 24px; --p5-6: 32px; --p5-7: 48px; --p5-8: 72px; --p5-9: 112px;
+
+  /* --- Elevation: hard offsets, zero blur. Ink on paper. -------------- */
+  --p5-lift-1: 4px 4px 0 var(--p5-red-deep);
+  --p5-lift-2: 8px 8px 0 var(--p5-red-deep);
+  --p5-lift-3: 14px 14px 0 var(--p5-black);
+  --p5-lift-ink: 6px 6px 0 var(--p5-black);
+
+  /* --- Motion ---------------------------------------------------------
+     Everything arrives faster than it leaves. Nothing fades in slowly. */
+  --p5-snap:  120ms cubic-bezier(.2, .9, .1, 1.15);
+  --p5-slide: 220ms cubic-bezier(.16, 1, .3, 1);
+  --p5-settle: 420ms cubic-bezier(.16, 1, .3, 1);
+
+  /* --- Textures -------------------------------------------------------
+     Dial --p5-halftone-alpha down toward .2 behind long body copy; the
+     default is the full-strength poster grain. */
+  --p5-halftone-alpha: .55;
+  --p5-halftone:
+    radial-gradient(circle at center, rgba(230,0,18,var(--p5-halftone-alpha)) 1px, transparent 1.3px);
+  --p5-halftone-size: 7px 7px;
+  --p5-hazard:
+    repeating-linear-gradient(-58deg,
+      var(--p5-red) 0 18px, transparent 18px 40px);
+}
+
+/* The four shard silhouettes. Torn paper, never a cropped rectangle. */
+:root {
+  --p5-clip-shard:  polygon(0 1.5%, 98.5% 0, 100% 97%, 1.5% 100%);
+  --p5-clip-tag:    polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  --p5-clip-fang:   polygon(0 0, 100% 0, 100% 84%, 68% 100%, 0 92%);
+  --p5-clip-scrap:  polygon(1% 0, 100% 2.5%, 99% 100%, 0 96%);
+  --p5-clip-pent:   polygon(50% 0, 100% 26%, 88% 100%, 12% 100%, 0 26%);
+}

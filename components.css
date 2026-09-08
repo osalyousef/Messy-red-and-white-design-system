@@ -1,0 +1,414 @@
+/* ============================================================
+   PERSONA 5 DESIGN SYSTEM
+   Components. Requires tokens.css.
+   Class prefix: .p5-
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--p5-black);
+  color: var(--p5-bone);
+  font-family: var(--p5-font-ui);
+  font-size: var(--p5-t-base);
+  line-height: var(--p5-lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Ground ------------------------------------------------- */
+.p5-ground {
+  position: relative;
+  background:
+    var(--p5-halftone) 0 0 / var(--p5-halftone-size),
+    linear-gradient(200deg, var(--p5-black-2) 0%, var(--p5-black) 55%, #180A0D 100%);
+}
+.p5-ground::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(-58deg,
+    rgba(230,0,18,.07) 0 3px, transparent 3px 46px);
+  pointer-events: none;
+}
+
+/* ---------- Type --------------------------------------------------- */
+.p5-display {
+  font-family: var(--p5-font-display);
+  font-weight: 400;
+  line-height: var(--p5-lh-tight);
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  transform: skewX(var(--p5-skew));
+  text-wrap: balance;
+  margin: 0;
+}
+.p5-display--flat { transform: none; }
+.p5-eyebrow {
+  font-family: var(--p5-font-ui);
+  font-weight: 700;
+  font-size: var(--p5-t-xs);
+  letter-spacing: var(--p5-track-cap);
+  text-transform: uppercase;
+  color: var(--p5-red-text);
+  margin: 0;
+}
+.p5-scrawl {
+  font-family: var(--p5-font-scrawl);
+  font-size: var(--p5-t-sm);
+  line-height: 1.4;
+  color: var(--p5-bone);
+  transform: rotate(-4deg);
+  display: inline-block;
+}
+.p5-lead { font-size: var(--p5-t-md); color: var(--p5-bone); max-width: 62ch; }
+.p5-muted { color: var(--p5-smoke); }
+.p5-num { font-variant-numeric: tabular-nums; }
+
+/* Text knocked out of a red slab: the game's caption treatment. */
+.p5-knockout {
+  display: inline-block;
+  background: var(--p5-red);
+  color: var(--p5-white);
+  padding: var(--p5-1) var(--p5-3) 3px;
+  clip-path: var(--p5-clip-tag);
+  transform: skewX(var(--p5-skew));
+  font-family: var(--p5-font-display);
+  font-size: var(--p5-t-sm);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ---------- Surfaces ----------------------------------------------- */
+.p5-shard {
+  position: relative;
+  background: var(--p5-soot);
+  border: var(--p5-hairline) solid var(--p5-ash);
+  clip-path: var(--p5-clip-shard);
+  padding: var(--p5-5);
+}
+.p5-shard--paper {
+  background: var(--p5-bone);
+  color: var(--p5-black);
+  border-color: var(--p5-black);
+  box-shadow: var(--p5-lift-2);
+  clip-path: var(--p5-clip-scrap);
+}
+.p5-shard--paper .p5-muted { color: #5E5155; }
+.p5-shard--ink {
+  background: var(--p5-black);
+  border-color: var(--p5-red);
+  box-shadow: var(--p5-lift-1);
+}
+.p5-shard--tilt { transform: rotate(var(--p5-tilt)); }
+
+/* ---------- Buttons ------------------------------------------------- */
+.p5-btn {
+  --_fill: var(--p5-black);
+  --_ink: var(--p5-bone);
+  --_edge: var(--p5-bone);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p5-2);
+  padding: var(--p5-3) var(--p5-6);
+  background: var(--_fill);
+  color: var(--_ink);
+  border: var(--p5-hairline) solid var(--_edge);
+  border-radius: var(--p5-radius);
+  transform: skewX(var(--p5-skew));
+  font-family: var(--p5-font-display);
+  font-size: var(--p5-t-md);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform var(--p5-snap), background var(--p5-snap), color var(--p5-snap);
+}
+.p5-btn > * { transform: skewX(calc(-1 * var(--p5-skew))); }
+.p5-btn:hover  { --_fill: var(--p5-red); --_edge: var(--p5-red); --_ink: var(--p5-white);
+                 transform: skewX(var(--p5-skew)) translate(-3px, -3px) scale(1.02); }
+.p5-btn:active { transform: skewX(var(--p5-skew)) translate(2px, 2px) scale(.99); }
+.p5-btn:focus-visible { outline: 3px solid var(--p5-go); outline-offset: 3px; }
+.p5-btn--primary { --_fill: var(--p5-red); --_edge: var(--p5-white); --_ink: var(--p5-white); }
+.p5-btn--primary:hover { --_fill: var(--p5-red-hot); }
+.p5-btn--ghost   { --_fill: transparent; --_edge: var(--p5-ash); --_ink: var(--p5-smoke); }
+.p5-btn--ghost:hover { --_ink: var(--p5-white); }
+.p5-btn--danger  { --_fill: var(--p5-black); --_edge: var(--p5-burn); --_ink: var(--p5-burn); }
+.p5-btn--danger:hover { --_fill: var(--p5-burn); --_edge: var(--p5-burn); --_ink: var(--p5-black); }
+.p5-btn[disabled] {
+  --_fill: var(--p5-ash); --_edge: var(--p5-ash); --_ink: var(--p5-smoke);
+  cursor: not-allowed; pointer-events: none;
+}
+.p5-btn--sm { padding: 6px var(--p5-4); font-size: var(--p5-t-sm); }
+/* A row of buttons is one object: same height whatever the variant. */
+.p5-row .p5-btn { min-height: 46px; }
+.p5-row .p5-btn--sm { min-height: 34px; }
+
+/* The All-Out Attack: the one hero trigger. Never more than one per screen.
+
+   A clip-path cuts the border off with it, so the edge cannot be a `border`
+   here. The element itself is the edge colour and ::before is the inset fill.
+   Same reason the focus state recolours that edge instead of using `outline`:
+   an outline on a clipped element is clipped away too. */
+.p5-attack {
+  --_edge: var(--p5-white);
+  --_fill: var(--p5-red);
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 104px; height: 104px;
+  padding: 0;
+  background: var(--_edge);
+  color: var(--p5-white);
+  border: 0;
+  clip-path: var(--p5-clip-pent);
+  font-family: var(--p5-font-display);
+  font-size: var(--p5-t-lg);
+  text-transform: uppercase;
+  cursor: pointer;
+  filter: drop-shadow(14px 14px 0 var(--p5-black));
+  transition: transform var(--p5-snap), background var(--p5-snap);
+}
+.p5-attack::before {
+  content: "";
+  position: absolute;
+  inset: var(--p5-rule);
+  background: var(--_fill);
+  clip-path: var(--p5-clip-pent);
+  transition: background var(--p5-snap);
+}
+.p5-attack span { position: relative; transform: skewX(var(--p5-skew)) rotate(-3deg); display: block; }
+.p5-attack:hover { --_fill: var(--p5-red-hot); transform: scale(1.06) rotate(2deg); }
+.p5-attack:active { transform: scale(.95); }
+.p5-attack:focus-visible { --_edge: var(--p5-go); outline: none; }
+
+/* ---------- Tags & chips -------------------------------------------- */
+.p5-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px var(--p5-3) 4px;
+  background: var(--p5-black);
+  border: var(--p5-hairline) solid var(--p5-ash);
+  color: var(--p5-bone);
+  transform: skewX(var(--p5-skew));
+  font-size: var(--p5-t-xs);
+  font-weight: 700;
+  letter-spacing: var(--p5-track-cap);
+  text-transform: uppercase;
+}
+.p5-tag > * { display: inline-block; transform: skewX(calc(-1 * var(--p5-skew))); }
+.p5-tag--go    { border-color: var(--p5-go);   color: var(--p5-go); }
+.p5-tag--alert { border-color: var(--p5-red);  color: var(--p5-red-text); }
+.p5-tag--hold  { border-color: var(--p5-hold); color: var(--p5-hold); }
+.p5-tag--solid { background: var(--p5-red); border-color: var(--p5-red); color: var(--p5-white); }
+
+/* Filter chip. Toggles with aria-pressed. */
+.p5-chip {
+  display: inline-flex; align-items: baseline; gap: var(--p5-2);
+  padding: var(--p5-2) var(--p5-4);
+  background: var(--p5-black-2);
+  border: var(--p5-hairline) solid var(--p5-ash);
+  color: var(--p5-bone);
+  transform: skewX(var(--p5-skew));
+  font-family: inherit;
+  font-size: var(--p5-t-sm);
+  cursor: pointer;
+  transition: transform var(--p5-snap), border-color var(--p5-snap), background var(--p5-snap);
+}
+.p5-chip > * { display: inline-block; transform: skewX(calc(-1 * var(--p5-skew))); }
+.p5-chip:hover { transform: skewX(var(--p5-skew)) translate(-2px,-2px); border-color: var(--p5-red); }
+.p5-chip:focus-visible { outline: 3px solid var(--p5-go); outline-offset: 2px; }
+.p5-chip__count { color: var(--p5-smoke); font-variant-numeric: tabular-nums; font-size: var(--p5-t-xs); }
+.p5-chip[aria-pressed="true"] {
+  background: var(--p5-red-ghost); border-color: var(--p5-go); color: var(--p5-go);
+}
+.p5-chip[aria-pressed="true"] .p5-chip__count { color: var(--p5-go); }
+
+/* ---------- Gauges --------------------------------------------------- */
+.p5-gauge { display: grid; gap: 5px; }
+.p5-gauge__head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: var(--p5-t-xs); letter-spacing: var(--p5-track-cap);
+  text-transform: uppercase; font-weight: 700; color: var(--p5-smoke);
+}
+.p5-gauge__val { color: var(--p5-bone); font-variant-numeric: tabular-nums; }
+.p5-gauge__track {
+  height: 10px;
+  background: var(--p5-black);
+  border: var(--p5-hairline) solid var(--p5-ash);
+  transform: skewX(var(--p5-skew));
+  overflow: hidden;
+}
+.p5-gauge__fill { height: 100%; background: var(--p5-red); transition: width var(--p5-settle); }
+.p5-gauge--go   .p5-gauge__fill { background: var(--p5-go); }
+.p5-gauge--hold .p5-gauge__fill { background: var(--p5-hold); }
+.p5-gauge--burn .p5-gauge__fill { background: var(--p5-burn); }
+
+/* ---------- Banner: the interrupt ------------------------------------ */
+.p5-banner {
+  position: relative;
+  display: flex; align-items: center; gap: var(--p5-4);
+  padding: var(--p5-4) var(--p5-5) var(--p5-5);
+  background: var(--p5-red);
+  color: var(--p5-white);
+  clip-path: var(--p5-clip-fang);
+  box-shadow: var(--p5-lift-ink);
+}
+.p5-banner__shout {
+  font-family: var(--p5-font-display);
+  font-size: var(--p5-t-xl);
+  line-height: .8;
+  transform: skewX(var(--p5-skew)) rotate(-3deg);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.p5-banner__body { font-size: var(--p5-t-sm); max-width: 46ch; }
+.p5-banner--hold { background: var(--p5-hold); color: var(--p5-black); }
+.p5-banner--go   { background: var(--p5-go);   color: var(--p5-black); }
+
+/* ---------- Nav: the jaw --------------------------------------------- */
+.p5-jaw { display: grid; gap: var(--p5-1); list-style: none; margin: 0; padding: 0; }
+.p5-jaw__item {
+  display: flex; align-items: center; gap: var(--p5-3);
+  padding: var(--p5-2) var(--p5-5) var(--p5-2) var(--p5-4);
+  background: var(--p5-black);
+  border-left: var(--p5-slab) solid var(--p5-ash);
+  color: var(--p5-smoke);
+  font-family: var(--p5-font-display);
+  font-size: var(--p5-t-md);
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: skewX(var(--p5-skew));
+  transition: transform var(--p5-snap), color var(--p5-snap), border-color var(--p5-snap);
+}
+.p5-jaw__item > * { transform: skewX(calc(-1 * var(--p5-skew))); }
+.p5-jaw__item:hover { color: var(--p5-bone); transform: skewX(var(--p5-skew)) translateX(-10px); }
+.p5-jaw__item[aria-current="page"] {
+  background: var(--p5-red); color: var(--p5-white);
+  border-left-color: var(--p5-white);
+  transform: skewX(var(--p5-skew)) translateX(-18px);
+}
+.p5-jaw__item:focus-visible { outline: 3px solid var(--p5-go); outline-offset: 2px; }
+
+/* ---------- Card ------------------------------------------------------ */
+.p5-card {
+  position: relative;
+  display: grid;
+  gap: var(--p5-3);
+  padding: var(--p5-4);
+  background: var(--p5-soot);
+  border: var(--p5-hairline) solid var(--p5-ash);
+  clip-path: var(--p5-clip-scrap);
+  transition: transform var(--p5-slide), border-color var(--p5-slide);
+}
+.p5-card:hover { transform: translate(-4px,-4px) rotate(-.6deg); border-color: var(--p5-red); }
+.p5-card__media {
+  aspect-ratio: 4 / 3;
+  background: var(--p5-black);
+  border: var(--p5-hairline) solid var(--p5-ash);
+  display: grid; place-items: end start;
+  overflow: hidden;
+  position: relative;
+}
+.p5-card__title {
+  font-family: var(--p5-font-display);
+  font-size: var(--p5-t-lg);
+  line-height: .92;
+  text-transform: uppercase;
+  transform: skewX(var(--p5-skew));
+  margin: 0;
+}
+.p5-card__meta {
+  display: flex; flex-wrap: wrap; gap: var(--p5-2) var(--p5-4);
+  font-size: var(--p5-t-xs); letter-spacing: .06em; text-transform: uppercase;
+  color: var(--p5-smoke); font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Step: the sequenced HUD ----------------------------------- */
+.p5-step {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: var(--p5-4);
+  align-items: start;
+  padding: var(--p5-4);
+  background: var(--p5-black);
+  border-left: var(--p5-rule) solid var(--p5-ash);
+}
+.p5-step[data-state="active"] { border-left-color: var(--p5-red); background: #17090C; }
+.p5-step[data-state="done"]   { border-left-color: var(--p5-go); opacity: .6; }
+.p5-step__no {
+  font-family: var(--p5-font-display);
+  font-size: var(--p5-t-xl);
+  line-height: .8;
+  color: var(--p5-ash);
+  transform: skewX(var(--p5-skew));
+  font-variant-numeric: tabular-nums;
+}
+.p5-step[data-state="active"] .p5-step__no { color: var(--p5-red-text); }
+.p5-step[data-state="done"]   .p5-step__no { color: var(--p5-go); }
+.p5-step__body { display: grid; gap: var(--p5-2); }
+
+/* ---------- Marquee ----------------------------------------------------
+   The rotation throws the corners outside the box, so the marquee must sit
+   in a clipping wrapper or it bleeds past the layout. */
+.p5-marquee-clip { overflow: hidden; padding-block: var(--p5-3); }
+.p5-marquee {
+  display: flex; overflow: hidden;
+  width: 104%; margin-left: -2%;
+  background: var(--p5-red);
+  color: var(--p5-white);
+  border-block: var(--p5-hairline) solid var(--p5-black);
+  transform: rotate(var(--p5-tilt));
+}
+.p5-marquee__track {
+  display: flex; gap: var(--p5-6);
+  padding: 6px 0;
+  white-space: nowrap;
+  font-family: var(--p5-font-display);
+  font-size: var(--p5-t-sm);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  animation: p5-scroll 26s linear infinite;
+}
+@keyframes p5-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---------- Fields ------------------------------------------------------ */
+.p5-field { display: grid; gap: 6px; }
+.p5-field__label {
+  font-size: var(--p5-t-xs); font-weight: 700;
+  letter-spacing: var(--p5-track-cap); text-transform: uppercase; color: var(--p5-smoke);
+}
+/* The shell carries the skew and the border; the input stays upright so
+   typed text is readable. Skewing an input directly slants its own text. */
+.p5-input-shell {
+  background: var(--p5-black);
+  border: var(--p5-hairline) solid var(--p5-ash);
+  transform: skewX(var(--p5-skew));
+  transition: border-color var(--p5-snap);
+}
+.p5-input-shell:focus-within { border-color: var(--p5-red); outline: 3px solid var(--p5-go); outline-offset: 2px; }
+.p5-input {
+  display: block; width: 100%;
+  padding: var(--p5-3) var(--p5-4);
+  background: transparent;
+  border: 0;
+  color: var(--p5-bone);
+  font-family: var(--p5-font-ui);
+  font-size: var(--p5-t-base);
+  transform: skewX(calc(-1 * var(--p5-skew)));
+}
+.p5-input::placeholder { color: var(--p5-smoke); }
+.p5-input:focus { outline: none; }
+
+/* ---------- Utility ------------------------------------------------------ */
+.p5-slash { height: var(--p5-rule); background: var(--p5-hazard); border: 0; margin: 0; }
+.p5-stack { display: grid; gap: var(--p5-4); align-content: start; }
+.p5-row   { display: flex; flex-wrap: wrap; gap: var(--p5-3); align-items: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .p5-btn:hover, .p5-chip:hover, .p5-jaw__item:hover { transform: skewX(var(--p5-skew)); }
+  .p5-card:hover, .p5-attack:hover { transform: none; }
+}
