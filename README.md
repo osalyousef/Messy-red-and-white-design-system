@@ -36,11 +36,6 @@ Buttons, tags, chips and nav items are skewed, so their label needs to sit in a 
 3. House angle is `-8deg`; panels tilt `-1.5deg`.
 4. Shadows are hard offsets with zero blur.
 5. Red is a weapon, not a background. Under ~15% of any screen.
-
-## One trap worth knowing
-
-`clip-path` cuts away the element's `border`, `outline` and `box-shadow` along with the shape. Anything clipped has to paint its edge another way: the pentagon trigger uses an inset `::before` for the fill, recolours that edge for focus instead of an `outline`, and uses `filter: drop-shadow()` instead of `box-shadow`.
-
 ## Credit
 
 The visual language belongs to Atlus. This repository is an independent interpretation of it as web UI, not affiliated with or endorsed by Atlus or Sega.
