@@ -1,6 +1,6 @@
-# Persona 5 Design System
+# Osama Design system
 
-A design system derived from the UI of **Persona 5** (Atlus, 2016): vermilion on soot, torn-paper edges, and type that leans eight degrees into the wind.
+A design system derived from the UI of **Persona 5** (Atlus, 2016) and my own design: vermilion on soot, torn-paper edges, and type that leans eight degrees into the wind.
 
 Plain CSS. No framework, no JavaScript, nothing to compile in your app. Three Google fonts are the only outside dependency.
 
