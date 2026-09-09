@@ -1,0 +1,50 @@
+{
+  "name": "persona5-design-system",
+  "version": "0.1.0",
+  "description": "A CSS design system derived from the UI of Persona 5: vermilion on soot, torn-paper edges, and type skewed -8deg. Tokens plus components, no framework, no JavaScript.",
+  "keywords": [
+    "css",
+    "design-system",
+    "design-tokens",
+    "ui",
+    "components",
+    "persona5",
+    "dark-theme",
+    "brutalist"
+  ],
+  "homepage": "https://github.com/osalyousef/persona5-design-system#readme",
+  "bugs": "https://github.com/osalyousef/persona5-design-system/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osalyousef/persona5-design-system.git"
+  },
+  "license": "MIT",
+  "author": "osalyousef",
+  "style": "persona5.css",
+  "main": "persona5.css",
+  "exports": {
+    ".": "./persona5.css",
+    "./persona5.css": "./persona5.css",
+    "./tokens.css": "./tokens.css",
+    "./components.css": "./components.css",
+    "./SKILL.md": "./SKILL.md",
+    "./DESIGN.md": "./DESIGN.md",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "persona5.css",
+    "tokens.css",
+    "components.css",
+    "DESIGN.md",
+    "SKILL.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "./build.sh",
+    "prepack": "./build.sh"
+  }
+}
